@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <StartupObject>Codecool.Geometry.Program</StartupObject>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>..\..\docs\Codecool.Geometry\Codecool.Geometry.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>..\Codecool.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+</Project>

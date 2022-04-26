@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Codecool.Geometry</name>
+    </assembly>
+    <members>
+        <member name="T:Codecool.Geometry.Containers.ShapeCollection">
+            <summary>
+                Shape Collection class
+            </summary>
+        </member>
+        <member name="T:Codecool.Geometry.Program">
+            <summary>
+                This is the main class of your program which contains Main method
+            </summary>
+        </member>
+        <member name="M:Codecool.Geometry.Program.Main(System.String[])">
+            <summary>
+                This is the entry point of your program.
+            </summary>
+            <param name="args">Command line arguments.</param>
+        </member>
+        <member name="T:Codecool.Geometry.Shapes.Circle">
+            <summary>
+                Circle implementation class
+            </summary>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.Circle.AreaFormula">
+            <summary>
+                Gets formula for the area of the circle as a string.
+            </summary>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.Circle.PerimeterFormula">
+            <summary>
+                Gets formula for the perimeter of the circle as a string.
+            </summary>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.Circle.Area">
+            <inheritdoc />
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.Circle.Perimeter">
+            <inheritdoc />
+        </member>
+        <member name="T:Codecool.Geometry.Shapes.EquilateralTriangle">
+            <summary>
+                Equilateral Triangle implementation class
+            </summary>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.EquilateralTriangle.AreaFormula">
+            <summary>
+                Gets formula for the area of the triangle as a string.
+            </summary>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.EquilateralTriangle.PerimeterFormula">
+            <summary>
+                Gets formula for the perimeter of the triangle as a string.
+            </summary>
+        </member>
+        <member name="T:Codecool.Geometry.Shapes.Rectangle">
+            <summary>
+                Rectangle implementation class
+            </summary>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.Rectangle.AreaFormula">
+            <summary>
+                Gets formula for the area of the rectangle as a string.
+            </summary>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.Rectangle.PerimeterFormula">
+            <summary>
+                Gets formula for the perimeter of the rectangle as a string.
+            </summary>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.Rectangle.Area">
+            <inheritdoc />
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.Rectangle.Perimeter">
+            <inheritdoc />
+        </member>
+        <member name="T:Codecool.Geometry.Shapes.RegularPentagon">
+            <summary>
+                Regular Pentagon implementation class
+            </summary>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.RegularPentagon.AreaFormula">
+            <summary>
+                Gets formula for the area of the pentagon as a string.
+            </summary>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.RegularPentagon.PerimeterFormula">
+            <summary>
+                Gets formula for the perimeter of the pentagon as a string.
+            </summary>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.RegularPentagon.Area">
+            <inheritdoc/>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.RegularPentagon.Perimeter">
+            <inheritdoc/>
+        </member>
+        <member name="T:Codecool.Geometry.Shapes.Shape">
+            <summary>
+                This is an abstract class representing geometrical shapes.
+            </summary>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.Shape.AreaFormula">
+            <summary>
+                Gets formula for the area of the shape as a string.
+                It is a static property so it cannot be abstract
+                This property should be hidden by subclasses
+            </summary>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.Shape.PerimeterFormula">
+            <summary>
+                Gets formula for the perimeter of the shape as a string.
+                It is a static property so it cannot be abstract
+                This property should be hidden by subclasses
+            </summary>
+        </member>
+        <member name="M:Codecool.Geometry.Shapes.Shape.CheckIfArgsAreGreaterThanZero(System.Double[])">
+            <summary>
+                Check if all args are greater than 0
+            </summary>
+            <param name="args">Arguments to check</param>
+            <returns>True if all of args are greater than 0</returns>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.Shape.Area">
+            <summary>
+               Gets calculated shape's area
+            </summary>
+            <returns>Area of the shape</returns>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.Shape.Perimeter">
+            <summary>
+                Gets calculated shape's perimeter.
+            </summary>
+            <returns>Perimeter of the shape</returns>
+        </member>
+        <member name="T:Codecool.Geometry.Shapes.Square">
+            <summary>
+                Square implementation class
+            </summary>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.Square.AreaFormula">
+            <summary>
+                Gets formula for the area of the rectangle as a string.
+            </summary>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.Square.PerimeterFormula">
+            <summary>
+                Gets formula for the perimeter of the rectangle as a string.
+            </summary>
+        </member>
+        <member name="T:Codecool.Geometry.Shapes.Triangle">
+            <summary>
+                Triangle implementation class
+            </summary>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.Triangle.AreaFormula">
+            <summary>
+                Gets formula for the area of the triangle as a string.
+            </summary>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.Triangle.PerimeterFormula">
+            <summary>
+                Gets formula for the perimeter of the triangle as a string.
+            </summary>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.Triangle.Perimeter">
+            <inheritdoc/>
+        </member>
+        <member name="P:Codecool.Geometry.Shapes.Triangle.Area">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
