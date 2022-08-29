@@ -8,18 +8,16 @@ namespace Codecool.Geometry.Shapes
     public class RegularPentagon : Shape
     {
         private double _a;
-        private double _b;
-        private static string _areaFormula = "a×b";
-        private static string _perimeterFormula = "2×a+2×b";
-        public double _area;
-        public double _perimeter;
+        private static string _areaFormula = "a×a×sqrt(5×(5+2×sqrt(5))/4|";
+        private static string _perimeterFormula = "5×a";
+        private double _area;
+        private double _perimeter;
 
-        public Rectangle(double a, double b)
+        public RegularPentagon(double a)
         {
             _a = a;
-            _b = b;
-            _area = a * b;
-            _perimeter = 2 * (a + b);
+            _area = (Math.Sqrt(25 + 10 * Math.Sqrt(5))) / 4 * Math.Pow(_a, 2);
+            _perimeter = 5 * _a;
         }
         /// <summary>
         ///     Gets formula for the area of the pentagon as a string.
@@ -36,5 +34,10 @@ namespace Codecool.Geometry.Shapes
 
         /// <inheritdoc/>
         public override double Perimeter => _perimeter;
+
+        public override string ToString()
+        {
+            return $"Pentagon, a = {Math.Round(_a, 2)}";
+        }
     }
 }

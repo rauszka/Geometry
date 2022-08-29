@@ -27,5 +27,10 @@ namespace Codecool.Geometry.Shapes
         ///     Gets formula for the perimeter of the triangle as a string.
         /// </summary>
         public new static string PerimeterFormula => _perimeterFormula;
+
+        public override string ToString()
+        {
+            return $"Equilateral Triangle, a = {Math.Round(_a, 2)}";
+        }
     }
 }

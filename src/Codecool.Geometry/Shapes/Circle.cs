@@ -33,5 +33,10 @@ namespace Codecool.Geometry.Shapes
         public override double Area => _area;
         /// <inheritdoc />
         public override double Perimeter => _perimeter;
+
+        public override string ToString()
+        {
+            return $"Circle, r = {Math.Round(_radius, 2)}";
+        }
     }
 }
