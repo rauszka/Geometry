@@ -13,6 +13,11 @@
             shapes.AddRange(CreateSomeShape());
         }
 
+        public string ShowShapeWithLargestPerimeter()
+        {
+            return _shapes.Max(p => p.Perimeter).ToString();
+        }
+
         public string ShowFormulas()
         {
             var shapeFormulas = _shapes.Select(s => s.ShowFormulas()).ToList();
@@ -23,6 +28,11 @@
                 result += shapeFormula + Environment.NewLine;
             }
             return result;
+        }
+
+        public string ShapeWithLargestArea()
+        {
+            return _shapes.Max(p => p.Area).ToString();
         }
 
         public void AddShape()

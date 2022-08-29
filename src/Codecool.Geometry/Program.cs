@@ -35,13 +35,13 @@
                         shapeCollection.GetShapesTable();
                         break;
                     case 3:
-                        // TODO Show shape with the largest perimeter
+                        Console.WriteLine(shapeCollection.ShowShapeWithLargestPerimeter());
                         break;
                     case 4:
-                        // TODO Show shape with the largest area
+                        Console.WriteLine(shapeCollection.ShapeWithLargesArea());
                         break;
                     case 5:
-                        shapeCollection.ShowFormulas();
+                        Console.WriteLine(shapeCollection.ShowFormulas());
                         break;
                     case 0:
                         Console.WriteLine("Hello and goodby");
