@@ -5,11 +5,24 @@
     /// </summary>
     public class ShapeCollection
     {
-        public List<Shape> shapes { get; set; }
+        private List<Shape> _shapes { get; set; }
 
         public ShapeCollection()
         {
             shapes = new List<Shape>();
+            shapes.AddRange(CreateSomeShape());
+        }
+
+        public string ShowFormulas()
+        {
+            var shapeFormulas = _shapes.Select(s => s.ShowFormulas()).ToList();
+            string result = string.Empty;
+
+            foreach (var shapeFormula in shapeFormulas)
+            {
+                result += shapeFormula + Environment.NewLine;
+            }
+            return result;
         }
 
         public void AddShape()
@@ -81,6 +94,18 @@
             }
 
             return result.ToString();
+        }
+
+        private List<Shape> CreateSomeShape()
+        {
+            Cricle circle = new Cricle(12);
+            EquilateralTriangle egTriangle = new EquilateralTriangle(14);
+            Rectangle rectangle = new Rectangle(11);
+            RegularPentagon regularPentagon = new RegularPentagon(11);
+            Square square = new Square(32);
+            Triangle triangle = new Triangle(33);
+
+            return new List<Shape>(){circle, rectangle, egTriangle, regularPentagon, square, triangle}
         }
 
         public void GetShapesTable()
