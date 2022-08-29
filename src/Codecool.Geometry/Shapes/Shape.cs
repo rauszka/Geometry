@@ -12,14 +12,15 @@ namespace Codecool.Geometry.Shapes
         ///     It is a static property so it cannot be abstract
         ///     This property should be hidden by subclasses
         /// </summary>
-        public static string AreaFormula => throw new NotImplementedException();
+        public static string AreaFormula { get; }
+    }
 
         /// <summary>
         ///     Gets formula for the perimeter of the shape as a string.
         ///     It is a static property so it cannot be abstract
         ///     This property should be hidden by subclasses
         /// </summary>
-        public static string PerimeterFormula => throw new NotImplementedException();
+        public static string PerimeterFormula { get; }
 
         /// <summary>
         ///     Check if all args are greater than 0
