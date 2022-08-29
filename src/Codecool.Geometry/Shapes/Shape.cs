@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Codecool.Geometry.Shapes
 {
@@ -29,7 +30,7 @@ namespace Codecool.Geometry.Shapes
         /// <returns>True if all of args are greater than 0</returns>
         public static bool CheckIfArgsAreGreaterThanZero(params double[] args)
         {
-            throw new NotImplementedException();
+            return args.Any(arg => arg > 0);
         }
 
         /// <summary>
