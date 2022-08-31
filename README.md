@@ -55,7 +55,7 @@ It is a web application, that uses ASP.NET Core MVC framework with controllers a
 
 
 
-# Background materials
+# Links
 ##### [Static keyword](https://www.geeksforgeeks.org/static-keyword-in-c-sharp/)
 ##### [UML](https://plantuml.com/class-diagram)
 ##### [Abstract Class And Abstract Method In C#](https://www.c-sharpcorner.com/UploadFile/93126e/importance-and-use-of-versioning-in-C-Sharp/)
