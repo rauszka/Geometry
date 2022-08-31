@@ -1,4 +1,7 @@
-﻿namespace Codecool.Geometry
+﻿using System;
+using Codecool.Geometry.Containers;
+
+namespace Codecool.Geometry
 {
     /// <summary>
     ///     This is the main class of your program which contains Main method
@@ -38,7 +41,7 @@
                         Console.WriteLine(shapeCollection.ShowShapeWithLargestPerimeter());
                         break;
                     case 4:
-                        Console.WriteLine(shapeCollection.ShapeWithLargesArea());
+                        Console.WriteLine(shapeCollection.ShapeWithLargestArea());
                         break;
                     case 5:
                         Console.WriteLine(shapeCollection.ShowFormulas());

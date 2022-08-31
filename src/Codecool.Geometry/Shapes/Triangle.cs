@@ -34,7 +34,7 @@ namespace Codecool.Geometry.Shapes
         /// <summary>
         ///     Gets formula for the perimeter of the triangle as a string.
         /// </summary>
-        public new static string Perimeter => _perimeter
+        public new static string Perimeter => _perimeter;
         /// <inheritdoc/>
         public override double PerimeterFormula => _perimeterFormula;
 

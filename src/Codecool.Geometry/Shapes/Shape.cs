@@ -14,7 +14,7 @@ namespace Codecool.Geometry.Shapes
         ///     This property should be hidden by subclasses
         /// </summary>
         public static string AreaFormula { get; }
-    }
+    
 
         /// <summary>
         ///     Gets formula for the perimeter of the shape as a string.

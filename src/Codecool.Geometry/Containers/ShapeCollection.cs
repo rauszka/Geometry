@@ -1,16 +1,22 @@
-﻿namespace Codecool.Geometry.Containers
+﻿using Codecool.Geometry.Shapes;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Codecool.Geometry.Containers
 {
     /// <summary>
     ///     Shape Collection class
     /// </summary>
     public class ShapeCollection
     {
-        private List<Shape> _shapes { get; set; }
+        private List<Shape> _shapes;
 
         public ShapeCollection()
         {
-            shapes = new List<Shape>();
-            shapes.AddRange(CreateSomeShape());
+            _shapes = new List<Shape>();
+            _shapes.AddRange(CreateSomeShape());
         }
 
         public string ShowShapeWithLargestPerimeter()
@@ -53,13 +59,13 @@
                     Console.WriteLine("Please give a radius number:");
                     string radius = Console.ReadLine();
                     var circle = new Circle(double.Parse(radius));
-                    shapes.Add(circle);
+                    _shapes.Add(circle);
                     break;
                 case 2:
                     Console.WriteLine("Please give a side length:");
                     string eqSideLength = Console.ReadLine();
                     var equilateralTriangle = new EquilateralTriangle(double.Parse(eqSideLength));
-                    shapes.Add(equilateralTriangle);
+                    _shapes.Add(equilateralTriangle);
                     break;
                 case 3:
                     Console.WriteLine("Please give the length of side 'a': ");
@@ -67,19 +73,19 @@
                     Console.WriteLine("Please give the length of side 'b': ");
                     string bSide = Console.ReadLine();
                     var rectangle = new Rectangle(double.Parse(aSide), double.Parse(bSide));
-                    shapes.Add(rectangle);
+                    _shapes.Add(rectangle);
                     break;
                 case 4:
                     Console.WriteLine("Please give a side length:");
                     string rpSideLength = Console.ReadLine();
                     var regularPentagon = new RegularPentagon(double.Parse(rpSideLength));
-                    shapes.Add(regularPentagon);
+                    _shapes.Add(regularPentagon);
                     break;
                 case 5:
                     Console.WriteLine("Please give a side length:");
                     string squSideLength = Console.ReadLine();
                     var square = new Square(double.Parse(squSideLength));
-                    shapes.Add(square);
+                    _shapes.Add(square);
                     break;
                 case 6:
                     Console.WriteLine("Please give the length of side 'a': ");
@@ -90,12 +96,12 @@
                     string triangleC = Console.ReadLine();
                     var triangle = new Triangle(double.Parse(triangleA), double.Parse(triangleB),
                         double.Parse(triangleC));
-                    shapes.Add(triangle);
+                    _shapes.Add(triangle);
                     break;
             }
         }
 
-        public string multipleCharacters(char chr, int num)
+        public string MultipleCharacters(char chr, int num)
         {
             StringBuilder result = new StringBuilder();
             for (int i = 0; i < num; i++)
@@ -108,14 +114,14 @@
 
         private List<Shape> CreateSomeShape()
         {
-            Cricle circle = new Cricle(12);
+            Circle circle = new Circle(12);
             EquilateralTriangle egTriangle = new EquilateralTriangle(14);
-            Rectangle rectangle = new Rectangle(11);
+            Rectangle rectangle = new Rectangle(11,12);
             RegularPentagon regularPentagon = new RegularPentagon(11);
             Square square = new Square(32);
-            Triangle triangle = new Triangle(33);
+            Triangle triangle = new Triangle(33,1,5);
 
-            return new List<Shape>(){circle, rectangle, egTriangle, regularPentagon, square, triangle}
+            return new List<Shape>() { circle, rectangle, egTriangle, regularPentagon, square, triangle };
         }
 
         public void GetShapesTable()
@@ -138,51 +144,51 @@
             StringBuilder table = new StringBuilder();
 
             table.Append("/")
-                .Append(multipleCharacters('-', 135))
+                .Append(MultipleCharacters('-', 135))
                 .Append("\\\n");
 
             table.Append("|")
-                .Append(multipleCharacters(' ', idNum - idHeader.Length))
+                .Append(MultipleCharacters(' ', idNum - idHeader.Length))
                 .Append(idHeader)
                 .Append("|")
-                .Append(multipleCharacters(' ', classNameNum - classHeader.Length))
+                .Append(MultipleCharacters(' ', classNameNum - classHeader.Length))
                 .Append(classHeader)
                 .Append("|")
-                .Append(multipleCharacters(' ', ToStringNum - toStringHeader.Length))
+                .Append(MultipleCharacters(' ', ToStringNum - toStringHeader.Length))
                 .Append(toStringHeader)
                 .Append("|")
-                .Append(multipleCharacters(' ', perimeterNum - perimeterHeader.Length))
+                .Append(MultipleCharacters(' ', perimeterNum - perimeterHeader.Length))
                 .Append(perimeterHeader)
                 .Append("|")
-                .Append(multipleCharacters(' ', perimeterFormulaNum - FormulaHeader.Length))
+                .Append(MultipleCharacters(' ', perimeterFormulaNum - FormulaHeader.Length))
                 .Append(FormulaHeader)
                 .Append("|")
-                .Append(multipleCharacters(' ', areaNum - areaHeader.Length))
+                .Append(MultipleCharacters(' ', areaNum - areaHeader.Length))
                 .Append(areaHeader)
                 .Append("|")
-                .Append(multipleCharacters(' ', areaFormulaNum - FormulaHeader.Length))
+                .Append(MultipleCharacters(' ', areaFormulaNum - FormulaHeader.Length))
                 .Append(FormulaHeader)
                 .Append("|\n");
 
             table.Append("|")
-                .Append(multipleCharacters('-', idNum))
+                .Append(MultipleCharacters('-', idNum))
                 .Append("|")
-                .Append(multipleCharacters('-', classNameNum))
+                .Append(MultipleCharacters('-', classNameNum))
                 .Append("|")
-                .Append(multipleCharacters('-', ToStringNum))
+                .Append(MultipleCharacters('-', ToStringNum))
                 .Append("|")
-                .Append(multipleCharacters('-', perimeterNum))
+                .Append(MultipleCharacters('-', perimeterNum))
                 .Append("|")
-                .Append(multipleCharacters('-', perimeterFormulaNum))
+                .Append(MultipleCharacters('-', perimeterFormulaNum))
                 .Append("|")
-                .Append(multipleCharacters('-', areaNum))
+                .Append(MultipleCharacters('-', areaNum))
                 .Append("|")
-                .Append(multipleCharacters('-', areaFormulaNum))
+                .Append(MultipleCharacters('-', areaFormulaNum))
                 .Append("|\n");
 
-            for (int i = 0; i < shapes.Count; i++)
+            for (int i = 0; i < _shapes.Count; i++)
             {
-                Shape shape = shapes[i];
+                Shape shape = _shapes[i];
                 int id = i;
                 String className = shape.GetType().Name;
                 String areaFormula = shape.AreaFormula;
@@ -191,50 +197,50 @@
                 double area = Math.Round(shapes[i].Area, 2);
 
                 table.Append("|")
-                    .Append(multipleCharacters(' ', idNum - id.ToString().Length))
+                    .Append(MultipleCharacters(' ', idNum - id.ToString().Length))
                     .Append(id)
                     .Append("|")
-                    .Append(multipleCharacters(' ', classNameNum - className.Length))
+                    .Append(MultipleCharacters(' ', classNameNum - className.Length))
                     .Append(className)
                     .Append("|")
-                    .Append(multipleCharacters(' ', ToStringNum - shape.ToString().Length))
+                    .Append(MultipleCharacters(' ', ToStringNum - shape.ToString().Length))
                     .Append(shape)
                     .Append("|")
-                    .Append(multipleCharacters(' ', perimeterNum - perimeter.ToString().Length))
+                    .Append(MultipleCharacters(' ', perimeterNum - perimeter.ToString().Length))
                     .Append(perimeter)
                     .Append("|")
-                    .Append(multipleCharacters(' ', perimeterFormulaNum - perimeterFormula.Length))
+                    .Append(MultipleCharacters(' ', perimeterFormulaNum - perimeterFormula.Length))
                     .Append(perimeterFormula)
                     .Append("|")
-                    .Append(multipleCharacters(' ', areaNum - area.ToString().Length))
+                    .Append(MultipleCharacters(' ', areaNum - area.ToString().Length))
                     .Append(area)
                     .Append("|")
-                    .Append(multipleCharacters(' ', areaFormulaNum - areaFormula.Length))
+                    .Append(MultipleCharacters(' ', areaFormulaNum - areaFormula.Length))
                     .Append(areaFormula)
                     .Append("|\n");
 
                 if (i != shapes.Count - 1)
                 {
                     table.Append("|")
-                        .Append(multipleCharacters('-', idNum))
+                        .Append(MultipleCharacters('-', idNum))
                         .Append("|")
-                        .Append(multipleCharacters('-', classNameNum))
+                        .Append(MultipleCharacters('-', classNameNum))
                         .Append("|")
-                        .Append(multipleCharacters('-', ToStringNum))
+                        .Append(MultipleCharacters('-', ToStringNum))
                         .Append("|")
-                        .Append(multipleCharacters('-', perimeterNum))
+                        .Append(MultipleCharacters('-', perimeterNum))
                         .Append("|")
-                        .Append(multipleCharacters('-', perimeterFormulaNum))
+                        .Append(MultipleCharacters('-', perimeterFormulaNum))
                         .Append("|")
-                        .Append(multipleCharacters('-', areaNum))
+                        .Append(MultipleCharacters('-', areaNum))
                         .Append("|")
-                        .Append(multipleCharacters('-', areaFormulaNum))
+                        .Append(MultipleCharacters('-', areaFormulaNum))
                         .Append("|\n");
                 }
             }
 
             table.Append("\\")
-                .Append(multipleCharacters('-', 135))
+                .Append(MultipleCharacters('-', 135))
                 .Append("/\n");
 
             Console.WriteLine(table.ToString());
